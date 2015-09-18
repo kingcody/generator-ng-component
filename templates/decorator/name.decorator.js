@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 angular.module('<%= scriptAppName %>')
   .config(function ($provide) {
@@ -6,4 +7,6 @@ angular.module('<%= scriptAppName %>')
       // decorate the $delegate
       return $delegate;
     });
-  });
+  });<% if (hasFilter('iife')) { %>
+
+})();<% } %>

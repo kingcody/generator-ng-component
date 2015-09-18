@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 describe('Service: <%= cameledName %>', function () {
 
@@ -16,4 +17,6 @@ describe('Service: <%= cameledName %>', function () {
     <%= expect() %>!!<%= cameledName %><%= to() %>.be.true;<% } %>
   });
 
-});
+});<% if (hasFilter('iife')) { %>
+
+})();<% } %>

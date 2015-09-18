@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 angular.module('<%= scriptAppName %>')
   .directive('<%= cameledName %>', function () {
@@ -8,4 +9,6 @@ angular.module('<%= scriptAppName %>')
       link: function (scope, element, attrs) {
       }
     };
-  });
+  });<% if (hasFilter('iife')) { %>
+
+})();<% } %>

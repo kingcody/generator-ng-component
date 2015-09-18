@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 describe('Directive: <%= cameledName %>', function () {
 
@@ -19,4 +20,6 @@ describe('Directive: <%= cameledName %>', function () {
     expect(element.text()).toBe('this is the <%= cameledName %> directive');<% } if (hasFilter('mocha')) { %>
     <%= expect() %>element.text()<%= to() %>.equal('this is the <%= cameledName %> directive');<% } %>
   }));
-});
+});<% if (hasFilter('iife')) { %>
+
+})();<% } %>

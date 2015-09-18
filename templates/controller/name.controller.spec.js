@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 describe('Controller: <%= classedName %>Ctrl', function () {
 
@@ -19,4 +20,6 @@ describe('Controller: <%= classedName %>Ctrl', function () {
     expect(1).toEqual(1);<% } if (hasFilter('mocha')) { %>
     <%= expect() %>1<%= to() %>.equal(1);<% } %>
   });
-});
+});<% if (hasFilter('iife')) { %>
+
+})();<% } %>

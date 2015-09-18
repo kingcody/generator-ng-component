@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 angular.module('<%= scriptAppName %>')
   .factory('<%= cameledName %>', function () {
@@ -13,4 +14,6 @@ angular.module('<%= scriptAppName %>')
         return meaningOfLife;
       }
     };
-  });
+  });<% if (hasFilter('iife')) { %>
+
+})();<% } %>

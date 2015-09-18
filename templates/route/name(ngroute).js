@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 angular.module('<%= scriptAppName %>')
   .config(function ($routeProvider) {
@@ -7,4 +8,6 @@ angular.module('<%= scriptAppName %>')
         templateUrl: '<%= htmlUrl %>',
         controller: '<%= classedName %>Ctrl'
       });
-  });
+  });<% if (hasFilter('iife')) { %>
+
+})();<% } %>

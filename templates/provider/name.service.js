@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 angular.module('<%= scriptAppName %>')
   .provider('<%= cameledName %>', function () {
@@ -22,4 +23,6 @@ angular.module('<%= scriptAppName %>')
     this.$get = function () {
       return new Greeter();
     };
-  });
+  });<% if (hasFilter('iife')) { %>
+
+})();<% } %>

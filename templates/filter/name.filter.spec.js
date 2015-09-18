@@ -1,4 +1,5 @@
-'use strict';
+<% if (hasFilter('iife')) { %>(function() {
+<% } %>'use strict';
 
 describe('Filter: <%= cameledName %>', function () {
 
@@ -17,4 +18,6 @@ describe('Filter: <%= cameledName %>', function () {
     <%= expect() %><%= cameledName %>(text)<%= to() %>.equal('<%= cameledName %> filter: ' + text);<% } %>
   });
 
-});
+});<% if (hasFilter('iife')) { %>
+
+})();<% } %>
